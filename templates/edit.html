@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+    <div  class="col-5 p-3 rounded border border-black shadow mx-auto mt-3">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div >
+                    <h2 class="">Edit Emplyee</h2>
+                </div>
+
+                <div class="mb-2">
+                    <label for="" class="form-label">Name</label>
+                    <input type="text"  value={{emp.name}} class="form-control" name='name' placeholder="Enter Your Name" required >
+                  </div>
+                  <div class="mb-2">
+                    <label for="" class="form-label">Email</label>
+                    <input type="email" value={{emp.email}} class="form-control" name='email' placeholder="Enter Your email" required >
+                  </div>
+                  <div class="mb-2">
+                    <label for="" class="form-label">Address</label>
+                    <textarea type="text"  class="form-control"  name='address' rows="3" placeholder="Enter Your address" required >{{emp.address}}</textarea>
+                  </div>
+                  <div class="mb-2">
+                    <label for="" class="form-label">Phone</label>
+                    <input type="number" value={{emp.phone}} class="form-control" name='phone' placeholder="Enter Your number" required >
+                  </div>
+                  <div class="mb-2 d-flex px-1 gap-2 ">
+                    <button  type="delete" class="btn btn-danger w-50" >Cancel</button>
+                    <button  type="submit"   class="btn btn-success w-50" >Edit</button>
+                  </div>
+            </form>
+        </div>
+{% endblock content %}
