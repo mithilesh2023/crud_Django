@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     <div  class="col-5 p-3 rounded border border-black shadow mx-auto mt-3">
-            <form action="" method="post">
+            <form action="{% url 'edit' emp.id %}" method="post">
                 {% csrf_token %}
                 <div >
                     <h2 class="">Edit Emplyee</h2>

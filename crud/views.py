@@ -33,16 +33,17 @@ def edit(r,id):
         address=r.POST.get('address')
         phone=r.POST.get('phone')
         emp=Emplyee(
+            id=id,
             name=name,
             email=email,
             address=address,
             phone=phone,
-            instance=emplyee
+            # instance=emplyee
         )
         emp.save()
         return redirect(homepage)
     context={
-        'emp':emp
+        'emp':emplyee
     }
     
     return render(r, 'edit.html',context)
